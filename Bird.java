@@ -18,7 +18,9 @@ public class Bird
     this.age = age;
     
     }
-    
+      public String getColor() {
+        return color;
+    }
     /**
      * Constructor for objects of class Bird
      */

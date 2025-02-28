@@ -1,11 +1,35 @@
+import java.util.ArrayList;
 
-/**
- * Write a description of class Zoo here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Zoo
-{
-   /** i did not write anything (just pseudo n the idea)*/
-}
+public class Zoo {
+   
+    private ArrayList<Bird> zooBirds;
+
+    private int countBlueBirds;
+
+   
+    public Zoo() {
+        zooBirds = new ArrayList<>();  
+        countBlueBirds = 0;           
+    }
+
+    // Method to add a bird to the zoo
+    public void addBird(Bird bird) {
+        zooBirds.add(bird);  
+        if (bird.getColor().equals("blue")) {
+            countBlueBirds++;  
+        }
+    }
+
+    public int getBlueBirdCount() {
+        return countBlueBirds;  
+    }
+
+  
+    }
+
+
+    
+
+
+
+
