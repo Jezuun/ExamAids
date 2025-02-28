@@ -7,37 +7,45 @@
  */
 public class AgeCalculator
 {
-    // instance variables - replace the example below with your own
-    private int currentYear = 2025;
-    private int yrOfBirth;
-    private int yearsWait;
-    private int yrAge;
-    private int legalAge = 16;
-    
-    // public int setYear(int yrOfBirth) {
-        // this.yrOfBirth = yrOfBirth;
+    // Instance variables
+    private int currentYear = 2025;  
+    private int yrOfBirth;           
+    private int yearsWait;           
+    private int yrAge;             
+    private int legalAge = 16;       
+
+ 
+    public int setYear(int yrOfBirth) {
+        this.yrOfBirth = yrOfBirth;
+        return yrOfBirth; 
+    }
+
+    public int getAge() {
+        yrAge = currentYear - yrOfBirth;  
+        return yrAge;                     
+    }
+
+    public int waitTime() {
+        yearsWait = legalAge - yrAge;    
+        return yearsWait;                
+    }
+
+    public static void main(String[] args) {
+       
+        AgeCalculator calculator = new AgeCalculator();
+
         
-        // /** forgot to write the return method (return yrOfBirth) */
-    // }
-    public int getAge (int yrOfBirth, int currentYear, int yrAge)
-    {
-        yrAge = currentYear - yrOfBirth; /** messed up the written order which
-        previously was currentYear - yrOfBirth = yrAge; */
-        return yrAge;
+        calculator.setYear(2010);
+
+        int age = calculator.getAge();
+
+        
+        if (age >= calculator.legalAge) {
+            System.out.println("You're legally able to drive.");
+        } else {
+ 
+            int waitTime = calculator.waitTime();
+            System.out.println("You're unable to drive for " + waitTime + " years.");
+        }
     }
-    // public int waitTime (int yrAge, int legalAge, int waitTime)/**waitTime not written in original*/
-    // {waitTime = legalAge - yrAge; /** missing return value*/
-// }
-
-///** Missing semicolon (;) after System.out.println() statements: In Java, each statement needs to end with a semicolon (;). You have missing semicolons after both System.out.println() statements.
-
-//Mismatched braces ({ and }): There's an extra closing brace (}) after the else block that doesn't match up with the opening brace. */
-
-//if (yrAge >= legalAge) {
-   // System.out.println("you're legally able to drive")
-//}
-//else {System.out.println("you're unable to drive for" + waitTime + "years."}
-//}
-    }
-
-    
+}
